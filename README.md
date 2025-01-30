@@ -1,129 +1,123 @@
-# Welcome to your bounty repo
-
-This file contains information around how to set-up your README.md and prepare for our collaboration.
-
-**Bug Bounties use two repos**:
-
-- a bug bounty repo (this one), which is used for scoping your bug bounty and for providing information to wardens
-- a submissions repo, where issues are submitted
-
-Ultimately, when we launch the bug bounty, this repo will be made public and will contain links to the in-scope files to be reviewed and all the information needed for bounty participants.
-
-**Action item for sponsors:**
-
-- [ ] Modify the contents of this README.md file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing.
-
-# [Project] Bug Bounty
-
-[⚡️**Project:** Please add award levels below:]
-
-**Option 1:**
+# SP1 Bug Bounty
 
 | Risk Score |  Payout |
 |------------|---------|
-| Critical | $[Insert Amount] |
-| High| $[Insert Amount] |
+| Critical | $10,000 - $150,000 |
+| High | $5,000 - $10,000 |
+| Medium | $1,000 - $5,000 |
+| Low | $250 - $1,000 |
 
+## Background on SP1
 
-**Option 2:**
+### What Is SP1?
 
-- **Until TVL exceeds $[Insert Amount]:**
-    - Max Critical Payout: $[Insert Amount] USDC/USDT/Other
-    - High Severity Payout: $[Insert Amount] USDC/USDT/Other
-- **After TVL exceeds $[Insert Amount]:**
-    - Max Critical Payout: $[Insert Amount] USDC/USDT/Other
-    - High Severity Payout: $[Insert Amount] USDC/USDT/Other
+SP1 is a zero-knowledge virtual machine (zkVM) which allows developers to prove an execution of arbitrary Rust (or other LLVM-compiled language) programs. This means
 
-## Background on [⚡️ Insert Project Name]
-
-### What Is [⚡️ Insert Project Name]?
-
-[⚡️ **Project**: Add a short overview of the project here.]
+- A developer can write a normal Rust code, which is then compiled to an ELF.
+- Given the ELF, SP1 sets up a proving key and a verifying key.
+- SP1 zkVM generates a proof on the execution of the Rust code using the proving key.
+- The verifying key can be used to verify the generated proof.
 
 ### How Does It Work?
 
-[⚡️ **Project**: Add a high-level technical overview of the project here]
+SP1's CLI tool will compile the Rust program into a RISC-V and generate an ELF. SP1 zkVM is composed of the various ZKP circuits, which prove the behavior of various opcodes of RISC-V. This creates a proof of execution based on STARK. SP1 then utilizes recursive STARKs as well as a STARK to SNARK wrapper to generate a small SNARK proof that can be verified on-chain. This recursion also allows SP1 to break an execution into smaller shards, which makes it possible to prove arbitrarily long program execution. 
 
 ### Further Technical Resources & Links
 
-[⚡️ **Project**: Please fill out the following information] 
-
-- **[Project Name] Docs**: Our system documentation, subject to change. [[Link]()]
-- **[Project Name] Whitepaper**: [Link]()
-- **[Project Name] Website**: [Link]()
-- **Twitter**: [@]()
-- **Discord** [Insert Discord handle here]()
+- **SP1 Docs**: Our system documentation, subject to change: [Link](https://docs.succinct.xyz/)
+- **SP1 Memory Argument Docs**: [Link](https://github.com/succinctlabs/sp1/blob/dev/book/static/SP1_Turbo_Memory_Argument.pdf)
+- **SP1 Security Docs**: Our security model - [Link](https://docs.succinct.xyz/docs/security/security-model)
+- **SP1 Security Advisories**: [Link](https://github.com/succinctlabs/sp1/security/advisories)
+- **SP1 Audit Reports**: [Link](https://github.com/succinctlabs/sp1/tree/dev/audits)
+- **Succinct Website**: [Link](https://www.succinct.xyz/)
+- **Twitter**: [@SuccinctLabs](https://x.com/SuccinctLabs)
+- **Other Links**: [Link](https://linktr.ee/succinctlabs)
 
 # Scope & Severity Criteria
 
-[⚡️ **Project**: Please insert any valid information around scope and severity criterias here]
+We mainly expect two types of vulnerabilities. 
 
-**Option 1:**
+**Soundness Bugs**: Issues where invalid execution can be proved to be correct.
 
+The severity will be based on how high the impact of the invalid execution can be. 
+
+| Severity level | Impact: High	| Impact: Medium |
+|------|-------| -------------- |
+| Likelihood: High	 | Critical | High |
+| Likelihood: Medium | High | Medium |
+
+**Completeness Bugs**: Issues where valid execution cannot be proved to be correct.
+
+The impact is judged on the impact of the program where the completeness bug occur. The likelihood is judged based on the scenario where the completeness bug occur.
+
+| Severity level | Impact: High	| Impact: Medium |
+|------|-------| -------------- |
+| Likelihood: High	 | Medium | Low |
+| Likelihood: Medium | Low | Low |
+
+For other class of vulnerabilities, the following criteria will be used.
 | Severity level | Impact: High	| Impact: Medium | Impact: Low
 |------|-------| -------------- |-------------- |
-| Likelihood: High	 | Critical | High | - |
-| Likelihood: Medium | High | - | - |
-| Likelihood: Low    | - | - | - |
-
-**Option 2:**
-
-| Severity level | >[Add percentage]% TVL	| [Add percentage]% TVL | <[Add percentage]% TVL
-|------|-------| -------------- |-------------- |
-| Likelihood: High	 | Critical | High | - |
-| Likelihood: Medium | Critical | High or Critical | High |
-| Likelihood: Low    | High or Critical | High | - |
+| Likelihood: High	 | Critical | Medium | Low |
+| Likelihood: Medium | High | Medium | Low |
+| Likelihood: Low    | Medium | Low | N/A |
 
 
-## Smart Contracts in Scope
+## Assets in Scope
 
-[⚡️ **Project**: Please fill in the Source and any scoping information that you deam necessary. In case you need more than one table, please copy the existing and multiply as needed]
+All reports **must be valid on SP1's latest release commit**, which can be found [here](https://github.com/succinctlabs/sp1/releases). 
 
+**Source**: [SP1](https://github.com/succinctlabs/sp1)
 
-**Source**: [Insert codebase source here]()
-
-| Name (Address Link) | Repo |
+| Name | Folder |
 |------|-------|
-| [Sentinel](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984) | github.com/sentinel-org/sentinel-evm |
-| [SentinelOne](https://etherscan.io/address/0x1f9840a85d5af5bf1d1762f925bdaddc4201f984)| github.com/sentinel-org/sentinel-oracles |
-| [SentinelTwo](https://etherscan.io/address/0xc18360217d8f7ab5e7c516566761ea12ce7f9d72) | github.com/sentinel-org/sentinel-rewards | 
+| sp1-core-executor | github.com/succinctlabs/sp1/tree/dev/crates/core/executor |
+| sp1-core-machine | github.com/succinctlabs/sp1/tree/dev/crates/core/machine |
+| sp1-recursion | github.com/succinctlabs/sp1/tree/dev/crates/recursion |
+| sp1-stark | github.com/succinctlabs/sp1/tree/dev/crates/stark | 
+| sp1-zkvm | github.com/succinctlabs/sp1/tree/dev/crates/zkvm/entrypoint |
+| sp1-lib | github.com/succinctlabs/sp1/tree/dev/crates/zkvm/lib |
 
 
 ## Out-of-Scope
 
-### Known Issues
+### Known "Issues"
 
-Bug reports covering previously-discovered bugs (listed below) are not eligible for a reward within this program. This includes known issues that the project is aware of but has consciously decided not to “fix”, necessary code changes, or any implemented operational mitigating procedures that can lessen potential risk. Every issue opened in the repo, closed PRs, previous contests and audits are out of scope.
+Bug reports covering previously-discovered bugs are not eligible for a reward within this program. This includes known "issues" that the project is aware of but has consciously decided not to “fix”, necessary code changes, or any implemented operational mitigating procedures that can lessen potential risk. Every issue opened in the repo, closed PRs, previous contests and audits are out of scope.
 
-[⚡️**Project:** Please provide any relevant links in a bullet format below:]
+See our security related documentation for more details.
+- [SP1 Security Model](https://docs.succinct.xyz/docs/security/security-model)
+- [RV32IM Standards Compliance](https://docs.succinct.xyz/docs/security/rv32im-implementation)
+- [Safe Usage of SP1 Precompiles](https://docs.succinct.xyz/docs/security/safe-precompile-usage)
 
+### Security Model 
+
+Bug reports must be valid within SP1's [security model and program safety requirements](https://docs.succinct.xyz/docs/security/security-model). In summary, security issues that arise from user program itself rather than from SP1 are out of scope. All proof of concepts of issues must be done on user programs that are safe, which are then compiled with the correct toolchain. More details are in the our documentation linked above. We note that the documentation may be subject to change.
 
 ### Previous Audits
 
-Any **previously reported** vulnerabilities mentioned in past audit reports are not eligible for a reward.
+Any **previously reported** vulnerabilities mentioned in past audit reports are not eligible for a reward. Also, any vulnerabilities mentioned in the security advisories are not eligible. 
 
-[⚡️ **Project Name**] previous audits can be found below: [Please insert a link to your previous audits.]
+Previous audits can be found in [this link](https://github.com/succinctlabs/sp1/tree/dev/audits), and security advisories are in [this link](https://github.com/succinctlabs/sp1/security/advisories).
 
 
 ### Specific Types of Issues
 
-**An example of that would be the following:**
+**An example of out-of-scope issues are as follows:**
 
 - Informational findings.
-- Design choices related to protocol. For example, the ability to deploy permissionless pools.
-- Issues that are ultimately user errors and can easily be caught in the frontend. For example, transfers to address(0).
-- Rounding errors.
-- Relatively high gas consumption.
-
-[⚡️**Project:** Please add any specific types of issues that should be considered out-of-scope.]
+- Documentation errors.
+- Issues in example or demo applications.
+- Issues that take an infeasible amount of computation to exploit.
+- Security issues that arise from vulnerable user programs.
 
 # Additional Context
 
-### Trusted Roles
+## Disclosure Guideline
 
-[⚡️ **Project**: Please explain your protocol's trusted roles.]
+All valid reports **must have valid proof of concept** included.
 
+Do not disclose submitted bug reports without a clear consent from Succinct.
 
-### Miscellaneous
-Employees of [Insert Project Name] and their family members are ineligible for bounties.
-
+## Miscellaneous
+Current and former employees and contractors of Succinct are ineligible for bounties.
