@@ -24,9 +24,9 @@ SP1's CLI tool will compile the Rust program into a RISC-V and generate an ELF. 
 
 ### Further Technical Resources & Links
 
-- **SP1 Docs**: Our system documentation, subject to change: [Link](https://docs.succinct.xyz/)
-- **SP1 Memory Argument Docs**: [Link](https://github.com/succinctlabs/sp1/blob/dev/book/static/SP1_Turbo_Memory_Argument.pdf)
-- **SP1 Security Docs**: Our security model - [Link](https://docs.succinct.xyz/docs/security/security-model)
+- **SP1 Docs**: Our system documentation, subject to change: [Link](https://docs.succinct.xyz/docs/sp1/introduction)
+- **SP1 Memory Argument Docs**: [Link](https://docs.succinct.xyz/assets/files/SP1_Turbo_Memory_Argument-b042ba18b58c4add20a8370f4802f077.pdf)
+- **SP1 Security Docs**: Our security model - [Link](https://docs.succinct.xyz/docs/sp1/security/security-model)
 - **SP1 Security Advisories**: [Link](https://github.com/succinctlabs/sp1/security/advisories)
 - **SP1 Audit Reports**: [Link](https://github.com/succinctlabs/sp1/tree/dev/audits)
 - **Succinct Website**: [Link](https://www.succinct.xyz/)
@@ -86,13 +86,13 @@ All reports **must be valid on SP1's latest release commit**, which can be found
 Bug reports covering previously-discovered bugs are not eligible for a reward within this program. This includes known "issues" that the project is aware of but has consciously decided not to “fix”, necessary code changes, or any implemented operational mitigating procedures that can lessen potential risk. Every issue opened in the repo, closed PRs, previous contests and audits are out of scope.
 
 See our security related documentation for more details.
-- [SP1 Security Model](https://docs.succinct.xyz/docs/security/security-model)
-- [RV32IM Standards Compliance](https://docs.succinct.xyz/docs/security/rv32im-implementation)
-- [Safe Usage of SP1 Precompiles](https://docs.succinct.xyz/docs/security/safe-precompile-usage)
+- [SP1 Security Model](https://docs.succinct.xyz/docs/sp1/security/security-model)
+- [RV32IM Standards Compliance](https://docs.succinct.xyz/docs/sp1/security/rv32im-implementation)
+- [Safe Usage of SP1 Precompiles](https://docs.succinct.xyz/docs/sp1/security/safe-precompile-usage)
 
 ### Security Model 
 
-Bug reports must be valid within SP1's [security model and program safety requirements](https://docs.succinct.xyz/docs/security/security-model). In summary, security issues that arise from user program itself rather than from SP1 are out of scope. All proof of concepts of issues must be done on user programs that are safe, which are then compiled with the correct toolchain. More details are in the our documentation linked above. We note that the documentation may be subject to change.
+Bug reports must be valid within SP1's [security model and program safety requirements](https://docs.succinct.xyz/docs/sp1/security/security-model). In summary, security issues that arise from user program itself rather than from SP1 are out of scope. All proof of concepts of issues must be done on user programs that are safe, which are then compiled with the correct toolchain. More details are in the our documentation linked above. We note that the documentation may be subject to change.
 
 ### Previous Audits
 
