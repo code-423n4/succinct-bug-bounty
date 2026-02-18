@@ -28,7 +28,7 @@ SP1's CLI tool will compile the Rust program into a RISC-V and generate an ELF. 
 - **SP1 Memory Argument Docs**: [Link](https://docs.succinct.xyz/assets/files/SP1_Turbo_Memory_Argument-b042ba18b58c4add20a8370f4802f077.pdf)
 - **SP1 Security Docs**: Our security model - [Link](https://docs.succinct.xyz/docs/sp1/security/security-model)
 - **SP1 Security Advisories**: [Link](https://github.com/succinctlabs/sp1/security/advisories)
-- **SP1 Audit Reports**: [Link](https://github.com/succinctlabs/sp1/tree/dev/audits)
+- **SP1 Audit Reports**: [Link](https://github.com/succinctlabs/sp1/tree/v6.0.0/audits)
 - **Succinct Website**: [Link](https://www.succinct.xyz/)
 - **Twitter**: [@SuccinctLabs](https://x.com/SuccinctLabs)
 - **Other Links**: [Link](https://linktr.ee/succinctlabs)
@@ -71,12 +71,13 @@ All reports **must be valid on SP1's latest release commit**, which can be found
 
 | Name | Folder |
 |------|-------|
-| sp1-core-executor | github.com/succinctlabs/sp1/tree/dev/crates/core/executor |
-| sp1-core-machine | github.com/succinctlabs/sp1/tree/dev/crates/core/machine |
-| sp1-recursion | github.com/succinctlabs/sp1/tree/dev/crates/recursion |
-| sp1-stark | github.com/succinctlabs/sp1/tree/dev/crates/stark | 
-| sp1-zkvm | github.com/succinctlabs/sp1/tree/dev/crates/zkvm/entrypoint |
-| sp1-lib | github.com/succinctlabs/sp1/tree/dev/crates/zkvm/lib |
+| sp1-core-executor | github.com/succinctlabs/sp1/tree/v6.0.0/crates/core/executor |
+| sp1-core-machine | github.com/succinctlabs/sp1/tree/v6.0.0/crates/core/machine |
+| sp1-recursion | github.com/succinctlabs/sp1/tree/v6.0.0/crates/recursion |
+| sp1-hypercube | github.com/succinctlabs/sp1/tree/v6.0.0/crates/hypercube |
+| sp1-zkvm | github.com/succinctlabs/sp1/tree/v6.0.0/crates/zkvm/entrypoint |
+| sp1-lib | github.com/succinctlabs/sp1/tree/v6.0.0/crates/zkvm/lib |
+| slop | github.com/succinctlabs/sp1/tree/v6.0.0/slop |
 
 
 ## Out-of-Scope
@@ -87,7 +88,6 @@ Bug reports covering previously-discovered bugs are not eligible for a reward wi
 
 See our security related documentation for more details.
 - [SP1 Security Model](https://docs.succinct.xyz/docs/sp1/security/security-model)
-- [RV32IM Standards Compliance](https://docs.succinct.xyz/docs/sp1/security/rv32im-implementation)
 - [Safe Usage of SP1 Precompiles](https://docs.succinct.xyz/docs/sp1/security/safe-precompile-usage)
 
 ### Security Model 
@@ -98,7 +98,7 @@ Bug reports must be valid within SP1's [security model and program safety requir
 
 Any **previously reported** vulnerabilities mentioned in past audit reports are not eligible for a reward. Also, any vulnerabilities mentioned in the security advisories are not eligible. 
 
-Previous audits can be found in [this link](https://github.com/succinctlabs/sp1/tree/dev/audits), and security advisories are in [this link](https://github.com/succinctlabs/sp1/security/advisories).
+Previous audits can be found in [this link](https://github.com/succinctlabs/sp1/tree/v6.0.0/audits), and security advisories are in [this link](https://github.com/succinctlabs/sp1/security/advisories).
 
 
 ### Specific Types of Issues
