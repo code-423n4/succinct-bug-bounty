@@ -67,17 +67,19 @@ For other class of vulnerabilities, the following criteria will be used.
 
 All reports **must be valid on SP1's latest release commit**, which can be found [here](https://github.com/succinctlabs/sp1/releases). 
 
+**Note that parts of the codebase marked as experimental or marked as not used in production are not part of the scope.**
+
 **Source**: [SP1](https://github.com/succinctlabs/sp1)
 
 | Name | Folder |
 |------|-------|
-| sp1-core-executor | github.com/succinctlabs/sp1/tree/v6.0.0/crates/core/executor |
-| sp1-core-machine | github.com/succinctlabs/sp1/tree/v6.0.0/crates/core/machine |
-| sp1-recursion | github.com/succinctlabs/sp1/tree/v6.0.0/crates/recursion |
-| sp1-hypercube | github.com/succinctlabs/sp1/tree/v6.0.0/crates/hypercube |
-| sp1-zkvm | github.com/succinctlabs/sp1/tree/v6.0.0/crates/zkvm/entrypoint |
-| sp1-lib | github.com/succinctlabs/sp1/tree/v6.0.0/crates/zkvm/lib |
-| slop | github.com/succinctlabs/sp1/tree/v6.0.0/slop |
+| sp1-core-executor | github.com/succinctlabs/sp1/tree/v6.1.0/crates/core/executor |
+| sp1-core-machine | github.com/succinctlabs/sp1/tree/v6.1.0/crates/core/machine |
+| sp1-recursion | github.com/succinctlabs/sp1/tree/v6.1.0/crates/recursion |
+| sp1-hypercube | github.com/succinctlabs/sp1/tree/v6.1.0/crates/hypercube |
+| sp1-zkvm | github.com/succinctlabs/sp1/tree/v6.1.0/crates/zkvm/entrypoint |
+| sp1-lib | github.com/succinctlabs/sp1/tree/v6.1.0/crates/zkvm/lib |
+| slop | github.com/succinctlabs/sp1/tree/v6.1.0/slop |
 
 
 ## Out-of-Scope
