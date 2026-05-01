@@ -69,7 +69,7 @@ All reports **must be valid on SP1's latest release commit**, which can be found
 
 **Note that parts of the codebase marked as experimental or marked as not used in production are not part of the scope.**
 
-**Untrusted programs / mprotect feature are not in production and out of scope.**
+**Untrusted programs / mprotect feature, and the usage of `proof_nonce` are not in production and out of scope.**
 
 **Source**: [SP1](https://github.com/succinctlabs/sp1)
 
